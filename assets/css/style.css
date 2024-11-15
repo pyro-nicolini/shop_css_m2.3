@@ -8,7 +8,7 @@
 
 
   body {
-    background-color: var(--bg-color);
+    background: #1d2021;    
     color: white;
     font-family: 'Poppins', sans-serif;
     top: 0;
@@ -31,10 +31,10 @@
 
  
   header {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgb(0, 0, 0);
+    filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.5));
     grid-area: header;
-    background-color: black;
-    box-shadow: 2px 2px 5px 1px rgba(37, 37, 37, 0.5);
+    background-color: rgb(26, 26, 26);
     color: var(--tc);
     text-align: center;
     z-index: 1000;
@@ -53,15 +53,46 @@
   
   aside {
     grid-area: sidebar;
-    padding: 10px;
     text-align: center;
+    border-right: 1px solid rgba(92, 92, 92, 0.5);
+    background-color: rgb(10, 0, 27);
+  }
+  
+  .menu {
+    display: flex;
+    flex-direction: column;
+    padding-top: 30%;
+    justify-content: space-evenly;
+    height: fit-content;
+    gap: 1rem;
+  }
+  
+  aside a:hover {
+    transition: background-color, border-left 0.1s ease-in-out;
+    border-left: 5px solid rgba(187, 2, 162, 0.9);
+    background-color: rgb(31, 0, 80);
+  }
+  
+  aside a:active {
+    border-left: 10px solid rgba(187, 2, 162, 0.9);
+  }
+  
+  aside a {
+    border-left: 0px solid rgba(187, 2, 162, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5rem;
+    transition: background-color, border-left 0.3s ease-in-out;
+    color: var(--tc);
+    text-decoration: none;
   }
   
   footer {
     background-image: url('../img/bg2.avif');
     background-attachment: fixed;
     background-size: cover;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 3px solid rgba(255, 255, 255, 0.37);
     grid-area: footer;
     background-color: rgb(0, 0, 0);
     text-align: center;
@@ -71,12 +102,13 @@
   .card {
     position: relative;
     padding: 1rem;
-    height: 400px;
+    height: 450px;
     background: linear-gradient(160deg, rgb(46, 0, 131), rgba(30, 0, 58, 0.911), rgba(10, 10, 10, 0.911));
     border: 4px solid rgba(0, 0, 0, 0.9);
     border-radius: 10px;
     overflow: hidden;
   }
+
   .card:hover {
   border: 4px solid rgba(167, 0, 130, 0.9);
   background: linear-gradient(160deg,rgb(127, 0, 131), rgb(83, 0, 131));
@@ -85,13 +117,13 @@
 
 }
 
-.card-inner {
+.card-image {
     position: relative;
     width: 100%;
     height: 60%;
 }
 
-.card-background {
+.card-marco {
     position: absolute;
     top: 0;
     left: 0;
@@ -112,17 +144,17 @@
 .card-photo img:hover {
     transform: scale(1.2) rotate(13deg);
     transition: transform 0.15s ease-in-out;
-    filter: drop-shadow(3px 3px 5px rgb(0, 0, 0));
+    filter: drop-shadow(3px 3px 2px rgb(0, 0, 0));
   }
   
   .card-photo img {
     transition: transform 0.3s ease-in-out;
-    filter: drop-shadow(3px 3px 5px rgb(0, 0, 0));
+    filter: drop-shadow(3px 3px 2px rgb(0, 0, 0));
     width: 105%;
     height: auto;
 }
 
-.card-content {
+.card-contenido {
     padding: 10px;
     text-align: center;
     color: white;
@@ -130,11 +162,11 @@
     position: relative;
 }
 
-.card-content h2 {
+.card-contenido h2 {
     margin-bottom: 1rem;
 }
 
-.card-content p {
+.card-contenido p {
     font-size: 1rem;
     color: rgba(255, 255, 255, 0.8);
 }
