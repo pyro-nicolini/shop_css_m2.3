@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    /* Aquí puedes agregar variables globales si es necesario */
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    top: 0;
+    left: 0;
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    grid-template-areas:
+      "header header header"
+      "sidebar main main"
+      "sidebar main main"
+      "footer footer footer";
+    grid-template-rows: 4rem 1fr auto;
+    grid-template-columns: 20rem 1fr 1fr;
+  }
+
+  h1 {
+      text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.596);
+  }
+  
+  header {
+    grid-area: header;
+    background: linear-gradient(70deg,rgb(255, 34, 34),rgb(255, 139, 30));
+    box-shadow: 2px 2px 5px 1px rgba(37, 37, 37, 0.5);
+    color: white;
+    text-align: center;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  main {
+    grid-area: main;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+    gap: 1rem;
+    padding: 10px; /* Opcional: mejora el espaciado interno */
+  }
+  
+  aside {
+    /* Cambiamos "sidebar" por "aside" para cumplir con semántica */
+    grid-area: sidebar;
+    background-color: rgb(107, 107, 107);
+    padding: 10px;
+    text-align: center;
+  }
+  
+  footer {
+    grid-area: footer;
+    background-color: rgb(48, 48, 48);
+    color: white;
+    text-align: center;
+  }
+  
+  .card {
+    border-radius: 1rem;
+    margin: 0.5rem;
+    height: 20rem;
+    background-color: rgb(243, 156, 43);
+    display: flex;
+    flex-direction: column; /* Asegura que el contenido se apile verticalmente */
+    justify-content: center;
+    align-items: center;
+  }
+  
