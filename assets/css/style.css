@@ -7,8 +7,18 @@
   }
 
 
+  .video-background {
+    position: fixed; /* Fija el video en la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;  /* Ocupa todo el ancho */
+    height: 100%; /* Ocupa toda la altura */
+    object-fit: cover; /* Cubre todo el fondo, manteniendo la proporción */
+    z-index: -1; /* Envía el video al fondo */
+}
+
+
   body {
-    background-image: url("../img/bg.png");
     background-size: cover;
     color: white;
     font-family: 'Poppins', sans-serif;
@@ -18,26 +28,23 @@
     min-height: 100vh;
     display: grid;
     grid-template-areas:
-      "header header header"
-      "sidebar main main"
-      "sidebar main main"
-      "footer footer footer";
+      "header header"
+      "sidebar main"
+      "sidebar main"
+      "footer footer";
       grid-template-rows: 4rem 1fr auto;
-      grid-template-columns: 10rem 1fr 1fr;
+      grid-template-columns: 10rem 1fr;
   }
 
   h1 {
       text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.596);
   }
 
-  img {
-    object-fit: cover;
-  }
-  
+ 
   header {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     grid-area: header;
-    background-color: rgba(46, 46, 46, 0.507);
+    background-color: black;
     box-shadow: 2px 2px 5px 1px rgba(37, 37, 37, 0.5);
     color: var(--tc);
     text-align: center;
@@ -48,13 +55,11 @@
   }
   
   main {
-    position: relative;
     grid-area: main;
-    text-align: center;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     gap: 1rem;
-    padding: 10px;
+    padding: 1rem;
   }
   
   aside {
@@ -64,6 +69,9 @@
   }
   
   footer {
+    background-image: url('../img/bg2.avif');
+    background-attachment: fixed;
+    background-size: cover;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     grid-area: footer;
     background-color: rgb(0, 0, 0);
@@ -72,21 +80,90 @@
   }
   
   .card {
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 1rem;
+    position: relative;
     padding: 1rem;
-    margin: 0.5rem;
-    height: fit-content;
-    background-color: rgba(255, 255, 255, 0.082);
-    display: flex;
-    flex-direction: column; /* Asegura que el contenido se apile verticalmente */
-    justify-content: center;
-    align-items: center;
+    height: 400px;
+    background: linear-gradient(to bottom, rgb(30, 14, 100), rgba(20, 20, 20, 0.911), rgba(0, 0, 0, 0.911));
+    border: 5px solid rgba(0, 0, 0, 0.9);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 60%;
+}
+
+.card-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 5px solid white;
+    border-radius: 10px;
+}
+
+.card-photo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.card-photo img:hover {
+    transform: scale(1.2) rotate(18deg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out;
+}
+
+.card-photo img {
+    transition: transform 0.2s ease-in-out;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.card-content {
+    padding: 10px;
+    text-align: center;
+    color: white;
+    z-index: 2;
+    position: relative;
+}
+
+.card-content h2 {
+    margin-bottom: 1rem;
+}
+
+.card-content p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+
+@media (max-width: 599px) {
+    .card-photo {
+        min-width: 285px;
+        max-width: 285px
+    }
   }
   
-  .card img {
-    width: 90%;
-    height: 10rem;
-    border: 6px solid rgb(255, 255, 255);
+
+  @media (min-width: 600px) and (max-width: 899px) {
+    .card-photo {
+        min-width: 285px;
+        max-width: 285px
+    }
   }
   
+
+  @media (min-width: 900px) {
+    .card-photo {
+        min-width: 285px;
+        max-width: 285px
+    }
+  }
