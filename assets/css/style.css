@@ -1,222 +1,228 @@
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=League+Spartan:wght@100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=League+Spartan:wght@100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 :root {
-    --bg-color: #312f3d;
-    --tc: white;
-    --logo-color: #FFC107;
-  }
+  --bg-color: #312f3d;
+  --tc: white;
+  --logo-color: #ffc107;
+}
+
+body {
+  background: #1d2021;
+  width: 100%;
+  color: white;
+  font-family: "League Spartan", sans-serif;
+  top: 0;
+  left: 0;
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "sidebar main"
+    "footer footer";
+  grid-template-rows: 10rem 1fr 1rem;
+  grid-template-columns: 10rem 1fr;
+}
+
+a {
+  color: var(--tc);
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+footer a:hover {
+  transition: border-bottom 0.1s ease-in-out;
+  border-bottom: 5px solid rgba(187, 2, 162, 0.9);
+  background-color: rgb(31, 0, 80);
+  font-weight: 700;
+}
+
+h1 {
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.596);
+  font-size: 5rem;
+  transition: font-size 0.4s ease-in-out;
+}
+
+h2 {
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.596);
+  font-size: 2rem;
+  transition: font-size 0.4s ease-in-out;
+}
+
+header {
+  font-family: "Bebas Neue";
+  border-bottom: 1px solid rgb(0, 0, 0);
+  grid-area: header;
+  background-image: url("../img/banner.jpeg");
+  background-position: 0 780px;
+  background-size: c;
+  background-color: black;
+  color: var(--tc);
+  text-align: center;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding-left: 10rem;
+}
+
+header img {
+  transform: rotate(10deg);
+  width: 100%;
+  max-width: 10rem;
+  filter: drop-shadow(8px 5px 0px rgb(255, 255, 255));
+}
+
+main {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+aside {
+  grid-area: sidebar;
+  text-align: center;
+  border-right: 1px solid rgba(92, 92, 92, 0.5);
+  background-color: rgb(10, 0, 27);
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  padding-top: 30%;
+  justify-content: space-evenly;
+  height: fit-content;
+  gap: 1rem;
+}
+
+aside a:hover {
+  transition: border-right 0.1s ease-in-out;
+  border-right: 5px solid rgba(187, 2, 162, 0.9);
+  background-color: rgb(31, 0, 80);
+  font-weight: 700;
+}
+
+aside a:active {
+  border-right: 10px solid rgba(187, 2, 162, 0.9);
+}
+
+aside a {
+  border-right: 0px solid rgba(187, 2, 162, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5rem;
+  transition: background-color, border-left 0.3s ease-in-out;
+  color: var(--tc);
+  text-decoration: none;
+}
+
+footer {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: rgb(9, 0, 51);
+  border-top: 3px solid rgba(255, 255, 255, 0.37);
+  grid-area: footer;
+  text-align: center;
+  min-height: 8rem;
+}
+
+footer > div {
+  cursor: pointer;
+}
+
+.fo {
+  position: relative;
+  width: auto;
+  height: 5rem;
+  filter: drop-shadow(8px 5px 0px rgb(255, 255, 255));
+  transform: rotate(15deg);
+  padding-bottom: 1rem;
+}
+
+.fooend {
+  gap: 1rem;
+}
 
 
-  body {
-    background: #1d2021;
-    width: 100%;
-    color: white;
-    font-family: 'League Spartan', sans-serif;
-    top: 0;
-    left: 0;
-    margin: 0;
-    min-height: 100vh;
-    display: grid;
-    grid-template-areas:
-      "header header"
-      "sidebar main"
-      "sidebar main"
-      "footer footer";
-      grid-template-rows: 10rem 1fr 1rem;
-      grid-template-columns: 10rem 1fr;
-  }
+.card {
+  position: relative;
+  padding: 1rem;
+  height: 500px;
+  background: linear-gradient(
+    160deg,
+    rgb(46, 0, 131),
+    rgba(30, 0, 58, 0.911),
+    rgba(10, 10, 10, 0.911)
+  );
+  border: 4px solid rgba(0, 0, 0, 0.9);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
 
-  a {
-    color: var(--tc);
-    text-decoration: none;
-    transition: color 0.3s ease-in-out;
-  }
-
-  footer a:hover {
-    transition: border-bottom 0.1s ease-in-out;
-    border-bottom: 5px solid rgba(187, 2, 162, 0.9);
-    background-color: rgb(31, 0, 80);
-    font-weight: 700;
-  }
-
-  h1 {
-      text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.596);
-      font-size: 5rem;
-      transition: font-size 0.4s ease-in-out;
-  }
-
-  h2 {
-      text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.596);
-      font-size: 2rem;
-      transition: font-size 0.4s ease-in-out;
-  }
-
- 
-  header {
-    font-family: "Bebas Neue";
-    border-bottom: 1px solid rgb(0, 0, 0);
-    grid-area: header;
-    background-image: url("../img/banner.jpeg");
-    background-position: 0 780px;
-    background-size: c;
-    background-color: black;
-    color: var(--tc);
-    text-align: center;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    padding-left: 10rem;
-  }
-
-  header img {
-    transform: rotate(10deg);
-    width: 100%;
-    max-width: 10rem;
-    filter: drop-shadow(8px 5px 0px rgb(255, 255, 255));
-  }
-  
-  main {
-    grid-area: main;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    gap: 1rem;
-    padding: 1rem;
-  }
-  
-  aside {
-    grid-area: sidebar;
-    text-align: center;
-    border-right: 1px solid rgba(92, 92, 92, 0.5);
-    background-color: rgb(10, 0, 27);
-  }
-  
-  .menu {
-    display: flex;
-    flex-direction: column;
-    padding-top: 30%;
-    justify-content: space-evenly;
-    height: fit-content;
-    gap: 1rem;
-  }
-  
-  aside a:hover {
-    transition: border-right 0.1s ease-in-out;
-    border-right: 5px solid rgba(187, 2, 162, 0.9);
-    background-color: rgb(31, 0, 80);
-    font-weight: 700;
-  }
-  
-  aside a:active {
-    border-right: 10px solid rgba(187, 2, 162, 0.9);
-  }
-  
-  aside a {
-    border-right: 0px solid rgba(187, 2, 162, 0.9);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 5rem;
-    transition: background-color, border-left 0.3s ease-in-out;
-    color: var(--tc);
-    text-decoration: none;
-  }
-  
-  footer {
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    background-color: rgb(9, 0, 51);
-    border-top: 3px solid rgba(255, 255, 255, 0.37);
-    grid-area: footer;
-    text-align: center;
-    min-height: 8rem;
-  }
-
-  footer>div {
-    cursor: pointer;
-  }
-
-  .fo {
-    position: relative;
-    width: auto;
-    height: 5rem;
-    filter: drop-shadow(8px 5px 0px rgb(255, 255, 255));
-    transform: rotate(15deg);
-    padding-bottom: 1rem;
-  }
-
-  .fooend {
-    gap: 1rem;
-  }
-  
-  .card {
-    position: relative;
-    padding: 1rem;
-    height: 500px;
-    background: linear-gradient(160deg, rgb(46, 0, 131), rgba(30, 0, 58, 0.911), rgba(10, 10, 10, 0.911));
-    border: 4px solid rgba(0, 0, 0, 0.9);
-    border-radius: 10px;
-    overflow: hidden;
-  }
-
-  .card:hover {
+.card:hover {
   border: 4px solid rgba(167, 0, 130, 0.9);
-  background: linear-gradient(160deg,rgb(127, 0, 131), rgb(83, 0, 131));
+  background: linear-gradient(160deg, rgb(127, 0, 131), rgb(83, 0, 131));
   transform: scale(1.02);
   transition: transform 0.15s ease-in-out;
-
 }
 
 .card-image {
-    position: relative;
-    width: 100%;
-    height: 60%;
+  position: relative;
+  width: 100%;
+  height: 60%;
 }
 
 .card-marco {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border: 3px solid rgba(255, 255, 255, 0.575);
-    border-radius: 10px;
-    background-image: url("../img/sc.jpg");
-    background-size: cover;
-    background-position: center;
-    background-size: 500% 300%;
-    opacity: 80%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 3px solid rgba(255, 255, 255, 0.575);
+  border-radius: 10px;
+  background-image: url("../img/sc.jpg");
+  background-size: cover;
+  background-position: center;
+  background-size: 500% 300%;
+  opacity: 80%;
 }
 
 .card-photo {
-    position: absolute;
-    top: 50%;
-    left: 47%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 47%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
 }
 
 .card-photo img:hover {
-    transform: scale(1.2) rotate(13deg);
-    transition: transform 0.15s ease-in-out;
-    filter: drop-shadow(3px 3px 2px rgb(0, 0, 0));
-  }
-  
-  .card-photo img {
-    transition: transform 0.3s ease-in-out;
-    filter: drop-shadow(3px 3px 2px rgb(0, 0, 0));
-    width: 105%;
-    height: auto;
+  transform: scale(1.2) rotate(13deg);
+  transition: transform 0.15s ease-in-out;
+  filter: drop-shadow(3px 3px 2px rgb(0, 0, 0));
+}
+
+.card-photo img {
+  transition: transform 0.3s ease-in-out;
+  filter: drop-shadow(3px 3px 2px rgb(0, 0, 0));
+  width: 105%;
+  height: auto;
 }
 
 .card-contenido {
-    padding: 10px;
-    text-align: center;
-    color: white;
-    z-index: 2;
-    position: relative;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  z-index: 2;
+  position: relative;
 }
 
 .card-contenido h3 {
@@ -224,9 +230,35 @@
 }
 
 .card-contenido p {
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 0.5rem;
+  text-wrap: wrap;
+  width: 100%;
+  margin-bottom: 1rem !important;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1rem;
+}
+
+.button {
+  padding: 0.5rem 2rem;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(125, 0, 184);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  width: 100%;
+  margin-top: 1rem;
+  filter: drop-shadow(5px 5px 2px rgb(0, 2, 102));
+}
+
+button:hover {
+  background-color: rgb(55, 0, 255);
+}
+
+span {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: rgb(255, 190, 105);
 }
 
 
@@ -236,8 +268,8 @@
       "header"
       "main"
       "footer";
-      grid-template-rows: 8rem 1fr auto;
-      grid-template-columns: 1fr;
+    grid-template-rows: 8rem 1fr auto;
+    grid-template-columns: 1fr;
   }
 
   header {
@@ -249,7 +281,7 @@
   main {
     flex: 1;
   }
-  
+
   h1 {
     transition: font-size 0.4s ease-in-out;
     font-size: 1.8em;
@@ -269,27 +301,22 @@
     gap: 1rem;
   }
 
-
-
-
-    .card-photo {
-        min-width: 285px;
-        max-width: 285px
-    }
+  .card-photo {
+    min-width: 285px;
+    max-width: 285px;
   }
-  
+}
 
-  @media (min-width: 600px) and (max-width: 899px) {
-    .card-photo {
-        min-width: 285px;
-        max-width: 285px
-    }
+@media (min-width: 600px) and (max-width: 899px) {
+  .card-photo {
+    min-width: 285px;
+    max-width: 285px;
   }
-  
+}
 
-  @media (min-width: 900px) {
-    .card-photo {
-        min-width: 285px;
-        max-width: 285px
-    }
+@media (min-width: 900px) {
+  .card-photo {
+    min-width: 285px;
+    max-width: 285px;
   }
+}

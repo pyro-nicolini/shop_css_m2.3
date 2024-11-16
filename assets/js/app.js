@@ -6,6 +6,24 @@ const titles = [
     "AWP | HyperBeast", "Glock-18 | Moonlight", "Skin Inferno Beast", "AK-47 | Redline",
     "Caja de Armas Legendarias", "Skin Infernal Phoenix", "Skin Desert Mirage"
   ];
+
+  const precios = [
+    "US: $12 / CLP: $10.800",
+    "US: $10 / CLP: $9.000",
+    "US: $15 / CLP: $13.500",
+    "US: $30 / CLP: $27.000",
+    "US: $45 / CLP: $40.500",
+    "US: $8 / CLP: $7.200",
+    "US: $20 / CLP: $18.000",
+    "US: $18 / CLP: $16.200",
+    "US: $25 / CLP: $22.500",
+    "US: $6 / CLP: $5.400",
+    "US: $14 / CLP: $12.600",
+    "US: $22 / CLP: $19.800",
+    "US: $40 / CLP: $36.000",
+    "US: $35 / CLP: $31.500",
+    "US: $8 / CLP: $7.200",
+  ];
   
   const descriptions = [
     "Skin épico que transforma a tu personaje en un poderoso caballero dragón con efectos visuales espectaculares.",
@@ -54,15 +72,24 @@ function generateCards() {
 
     const cardContent = document.createElement("div");
     cardContent.classList.add("card-contenido");
-
+    
     const cardTitle = document.createElement("h3");
     cardTitle.textContent = titles[index];
-
+    
     const cardDescription = document.createElement("p");
     cardDescription.textContent = descriptions[index];
 
+    const precius = document.createElement("span");
+    precius.textContent = precios[index];
+    
+    const buttoncito = document.createElement("button");
+    buttoncito.classList.add("button");
+    buttoncito.textContent = "COMPRAR";
+
     cardContent.appendChild(cardTitle);
     cardContent.appendChild(cardDescription);
+    cardContent.appendChild(precius);
+    cardContent.appendChild(buttoncito);
 
     // Agregar las partes al contenedor de la tarjeta
     card.appendChild(cardImage);
