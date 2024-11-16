@@ -55,7 +55,7 @@ function generateCards() {
     const cardContent = document.createElement("div");
     cardContent.classList.add("card-contenido");
 
-    const cardTitle = document.createElement("h2");
+    const cardTitle = document.createElement("h3");
     cardTitle.textContent = titles[index];
 
     const cardDescription = document.createElement("p");
