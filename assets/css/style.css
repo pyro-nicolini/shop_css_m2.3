@@ -31,13 +31,23 @@ a {
   transition: color 0.3s ease-in-out;
 }
 
+#selector, button {
+  margin-top: 1rem;
+}
+
 #selector {
   background-color: rgb(48, 0, 94) !important;
   color: #eeeeee;
-  width: 20rem;
+  min-width: 10rem;
   text-align: center;
   height: 2rem;
   border-radius: 6px;
+}
+
+label {
+  font-size: 1rem;
+  line-height: 0.2px;
+  color: #eeeeee;
 }
 
 
@@ -270,6 +280,7 @@ footer > div {
   transition: background-color 0.3s ease-in-out;
   width: 100%;
   filter: drop-shadow(5px 5px 2px rgb(0, 2, 102));
+  min-width: 2rem;
 }
 
 button:hover {
