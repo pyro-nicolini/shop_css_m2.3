@@ -89,9 +89,10 @@ header {
   border-bottom: 1px solid rgb(0, 0, 0);
   grid-area: header;
   background-image: url("../img/banner.jpeg");
-  background-position: 0 780px;
+  background-position: center;
   background-color: black;
-  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
   color: var(--tc);
   text-align: center;
   z-index: 1000;
@@ -385,7 +386,6 @@ span {
     max-width: 285px;
   }
     header {
-    background-position: bottom center;
     transition: background-position 0.3s ease-in-out;
   }
 
@@ -404,7 +404,6 @@ span {
   }
 
   header {
-    background-position: center 175%;
     transition: background-position 0.3s ease-in-out;
   }
 }
@@ -416,6 +415,9 @@ span {
   }
   .fooend {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 3rem;
   }
   header {
     transition: background-position 0.3s ease-in-out;
