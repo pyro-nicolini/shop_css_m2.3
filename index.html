@@ -9,8 +9,8 @@
   </head>
   <body>
     <header>
-        <div style="display: flex; align-content: center; justify-content: center; gap: 1rem;">
-            <label for="Products" >Ordenar por:
+        <div style="display: flex; align-items: center; flex-direction: column; gap: 1rem; width: 100%;">
+          <label for="Products" >Ordenar por:</label>
               <select name="Products" id="selector">
                 <option value="KNIFES">KNIFES</option>
                 <option value="KNIFES">GUNS</option>
@@ -19,13 +19,11 @@
                 <option value="KNIFES">SKINS</option>
                 <option value="KNIFES">CLOTH</option>
               </select>
-            </label>
-            <button class="button">ENVIAR</button>
         </div>
     </header>
     <aside>
         <div class="title">
-            <img src="assets/img/logo.png" alt="" />
+            <img class="logo" src="assets/img/logo.png" alt="" />
             <h1>CSGO SHOP.</h1>
             <i class="fas fa-list" style="color: white; font-size: 36px;"></i>
         </div>
@@ -43,7 +41,7 @@
       <!-- Las cards se inyectarán aquí -->
     </main>
     <footer>
-        <div style="display: flex;">
+        <div style="display: flex; justify-content: center; align-items: center;">
             <h2>CSGO SHOP ®</h2>
             <img class="fo" src="assets/img/logo.png" alt="" />
         </div>

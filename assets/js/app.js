@@ -1,4 +1,4 @@
-// Datos para las tarjetas
+
 const imagePaths = Array.from({ length: 15 }, (_, i) => `assets/img/${i + 1}.png`);
 const titles = [
     "Skin Dragon Knight", "Skin Phantom Strike", "Caja de Armas Elite", "M4A1 | Dragon Lore", 
@@ -46,10 +46,10 @@ const titles = [
 // Selección del contenedor principal para las tarjetas
 const mainContainer = document.querySelector("main");
 
-// Función para generar y agregar las tarjetas dinámicamente
+
 function generateCards() {
   imagePaths.forEach((image, index) => {
-    // Crear los elementos HTML de la tarjeta
+
     const card = document.createElement("div");
     card.classList.add("card");
 
@@ -91,14 +91,11 @@ function generateCards() {
     cardContent.appendChild(precius);
     cardContent.appendChild(buttoncito);
 
-    // Agregar las partes al contenedor de la tarjeta
     card.appendChild(cardImage);
     card.appendChild(cardContent);
 
-    // Añadir la tarjeta al contenedor principal
     mainContainer.appendChild(card);
   });
 }
 
-// Llamar a la función para generar las tarjetas
 generateCards();
