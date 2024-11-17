@@ -1,10 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=League+Spartan:wght@100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-:root {
-  --bg-color: #312f3d;
-  --tc: white;
-  --logo-color: #ffc107;
-}
 
 body {
   background: #1d2021;
@@ -32,14 +27,21 @@ body {
   margin-top: 2rem;
 }
 
+aside i {
+  font-size: 2rem;
+}
+
 a {
-  color: var(--tc);
+  color: white;
   text-decoration: none;
   transition: color 0.3s ease-in-out;
 }
 
-
-
+label {
+  font-size: 1rem;
+  line-height: 0.2px;
+  color: #eeeeee;
+}
 #selector {
   background-color: rgb(48, 0, 94) !important;
   color: #eeeeee;
@@ -48,37 +50,18 @@ a {
   height: 3rem;
   border-radius: 6px;
 }
-
-label {
-  font-size: 1rem;
-  line-height: 0.2px;
-  color: #eeeeee;
-}
-
-
-footer a:hover {
-  transition: border-bottom 0.1s ease-in-out;
-  border-bottom: 5px solid rgba(187, 2, 162, 0.9);
-  background-color: rgb(31, 0, 80);
-  font-weight: 700;
-}
-
 h1 {
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.596);
   font-size: 3rem;
   transition: font-size 0.4s ease-in-out;
   margin: 1rem 0;
 }
-
 h2 {
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.596);
   font-size: 2rem;
   transition: font-size 0.4s ease-in-out;
   margin: 0;
 }
-
-
-
 header {
   font-family: "Bebas Neue";
   border-bottom: 1px solid rgb(0, 0, 0);
@@ -88,28 +71,26 @@ header {
   background-color: black;
   background-size: cover;
   background-repeat: no-repeat;
-  color: var(--tc);
+  color: white;
   text-align: center;
   z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid rgba(234, 234, 234, 0.3);
 }
-
+.header-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
 aside img {
   transform: rotate(10deg);
   height: 5rem;
   filter: drop-shadow(8px 5px 0px rgb(255, 255, 255));
 }
-
-main {
-  grid-area: main;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  gap: 1rem;
-  padding: 1rem;
-}
-
 aside {
   display: flex;
   gap: 1rem;
@@ -120,12 +101,8 @@ aside {
   margin: 0 auto;
   border-right: 1px solid rgba(92, 92, 92, 0.5);
   background-color: rgb(10, 0, 27);
+  border: 1px solid rgba(234, 234, 234, 0.3);
 }
-
-
-
-
-
 .menu {
   width: 100%;
   display: flex;
@@ -134,18 +111,15 @@ aside {
   height: fit-content;
   gap: 1rem;
 }
-
 aside a:hover {
   transition: border-right 0.1s ease-in-out;
   border-right: 5px solid rgba(187, 2, 162, 0.9);
   background-color: rgb(31, 0, 80);
   font-weight: 700;
 }
-
 aside a:active {
   border-right: 10px solid rgba(187, 2, 162, 0.9);
 }
-
 aside a {
   border-right: 0px solid rgba(187, 2, 162, 0.9);
   display: flex;
@@ -153,10 +127,9 @@ aside a {
   justify-content: center;
   height: 5rem;
   transition: background-color, border-left 0.3s ease-in-out;
-  color: var(--tc);
+  color: white;
   text-decoration: none;
 }
-
 footer {
   margin: 0;
   display: flex;
@@ -168,22 +141,30 @@ footer {
   text-align: center;
   min-height: 8rem;
 }
-
 footer > div {
   cursor: pointer;
 }
-
-.fo {
-  position: relative;
-  width: auto;
-  height: 5rem;
-  filter: drop-shadow(8px 5px 0px rgb(255, 255, 255));
-  transform: rotate(15deg);
-  padding-bottom: 1rem;
+footer a:hover {
+  transition: border-bottom 0.1s ease-in-out;
+  border-bottom: 5px solid rgba(187, 2, 162, 0.9);
+  background-color: rgb(31, 0, 80);
+  font-weight: 700;
 }
-
-
-
+.social-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 2rem;
+  margin: 0.5rem 0;
+}
+main {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
 .card {
   position: relative;
   padding: 1rem;
@@ -202,20 +183,12 @@ footer > div {
   justify-content: space-evenly;
   transition: transform 0.2s ease-in-out;
 }
-
 .card:hover {
   border: 4px solid rgba(167, 0, 130, 0.9);
   background: linear-gradient(160deg, rgb(127, 0, 131), rgb(83, 0, 131));
   transform: scale(1.02);
   transition: transform 0.15s ease-in-out;
 }
-
-.card-image {
-  position: relative;
-  width: 100%;
-  height: 60%;
-}
-
 .card-marco {
   position: absolute;
   top: 0;
@@ -228,28 +201,31 @@ footer > div {
   background-position: center;
   opacity: 80%;
 }
-
 .card-photo {
   position: absolute;
   top: 50%;
   left: 47%;
   transform: translate(-50%, -50%);
   z-index: 1;
+  min-width: 285px;
+  max-width: 285px;
 }
-
-.card-photo img:hover {
-  transform: scale(1.2) rotate(13deg);
-  transition: transform 0.15s ease-in-out;
-  filter: drop-shadow(3px 3px 2px rgb(0, 0, 0));
+.card-image {
+  position: relative;
+  width: 100%;
+  height: 60%;
 }
-
 .card-photo img {
   transition: transform 0.3s ease-in-out;
   filter: drop-shadow(3px 3px 2px rgb(0, 0, 0));
   width: 105%;
   height: auto;
 }
-
+.card-photo img:hover {
+  transform: scale(1.2) rotate(13deg);
+  transition: transform 0.15s ease-in-out;
+  filter: drop-shadow(3px 3px 2px rgb(0, 0, 0));
+}
 .card-contenido {
   display: flex;
   justify-content: space-evenly;
@@ -261,7 +237,6 @@ footer > div {
   position: relative;
   gap: 0.6rem;
 }
-
 .card-contenido h3 {
   font-family: poppins, serif;
   font-size: 1.2rem;
@@ -269,12 +244,17 @@ footer > div {
   margin: 0;
   width: 100%;
 }
-
 .card-contenido p {
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.8);
 }
-
+span {
+  filter: drop-shadow(3px 3px 1px rgb(0, 0, 0));
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  color: rgb(255, 255, 27);
+}
 .button {
   padding: 1rem 0.3rem;
   font-size: 1rem;
@@ -288,21 +268,11 @@ footer > div {
   min-width: 2rem;
   transition: font-weight, background-color 0.1s ease-in-out;
 }
-
 button:hover {
   background-color: rgb(255, 0, 144);
   filter: drop-shadow(5px 5px 3px rgb(0, 0, 0));
   transition: filter 0.1s ease-in-out;
 }
-
-span {
-  filter: drop-shadow(3px 3px 1px rgb(0, 0, 0));
-  font-size: 1.4rem;
-  font-weight: 400;
-  margin-bottom: 0.5rem;
-  color: rgb(255, 255, 27);
-}
-
 
 @media (max-width: 576px) {
   body {
@@ -311,46 +281,23 @@ span {
       "header"
       "main"
       "footer";
-    grid-template-rows:auto 8rem 1fr auto;
+    grid-template-rows: auto 8rem 1fr auto;
     grid-template-columns: 1fr;
   }
-
   i {
-    display: block !important;
     cursor: pointer;
   }
-
-  h1:hover, .logo:hover {
+  h1:hover,
+  .logo:hover {
     scale: 1.2;
     transition: scale 0.3s ease-in-out;
   }
-
   header {
     font-size: 3rem;
     justify-content: center;
     align-items: center;
+    transition: background-position 0.3s ease-in-out;
   }
-
-  aside {
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    min-height: 7rem;
-    background-color: #360041;
-  }
-
-  aside img {
-    height: 3rem;
-  }
-
-  .menu {
-    display: none;;
-  }
-
-  main {
-    flex: 1;
-  }
-
   .title {
     justify-content: space-around !important;
     flex-direction: row;
@@ -358,38 +305,28 @@ span {
     margin-top: 0;
     gap: 2rem;
   }
-
+  aside {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 7rem;
+    background-color: #360041;
+  }
+  aside img {
+    height: 3rem;
+  }
+  .menu {
+    display: none;
+  }
   h1 {
     transition: font-size 0.4s ease-in-out;
     font-size: 1.8em;
   }
-
   footer {
     flex-direction: column;
   }
-
-
-
-  .card-photo {
-    min-width: 285px;
-    max-width: 285px;
-  }
-    header {
-    transition: background-position 0.3s ease-in-out;
-  }
-
-  
 }
-
 @media (min-width: 576px) and (max-width: 992px) {
-  .card-photo {
-    min-width: 285px;
-    max-width: 285px;
-  }
-
-  header {
-    transition: background-position 0.3s ease-in-out;
-  }
   body {
     grid-template-areas:
       "sidebar sidebar"
@@ -400,23 +337,19 @@ span {
   }
   header {
     padding-top: 2rem;
-    display: flex;
     flex-direction: column;
     justify-content: start;
     align-content: start;
     height: auto;
     background-image: url("../img/hd.png");
-    background-position: left;
+    background-position: left center;
     background-size: contain;
     background-attachment: fixed;
+    border: 1px solid rgba(209, 209, 209, 0.2);
+    transition: background-position 0.3s ease-in-out;
   }
-aside {
-  width: 100%;
-}
-
-  title {
-    display: flex;
-    flex-direction: row;
+  aside {
+    width: 100%;
   }
   aside img {
     height: 3rem;
@@ -424,31 +357,17 @@ aside {
   aside i {
     display: none !important;
   }
-
   .menu {
     display: flex !important;
     justify-content: center;
     align-items: center;
   }
- 
-  
-
-
-
 }
-
 @media (min-width: 993px) {
-  .card-photo {
-    min-width: 285px;
-    max-width: 285px;
-  }
-
   header {
     transition: background-position 0.3s ease-in-out;
   }
   aside i {
     display: none !important;
   }
-  
-
 }
