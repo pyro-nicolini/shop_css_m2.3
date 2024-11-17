@@ -1,24 +1,25 @@
-@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=League+Spartan:wght@100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Bebas+Neue&display=swap");
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 body {
   background: #1d2021;
   width: 100%;
   color: white;
   font-family: "League Spartan", sans-serif;
-  top: 0;
-  left: 0;
   margin: 0;
-  min-height: 100vh;
+  padding: 0;
   display: grid;
   grid-template-areas:
     "sidebar header"
     "sidebar main"
     "footer main";
-  grid-template-rows: 10rem 1fr 13rem;
+  grid-template-rows: 10rem 1fr auto;
   grid-template-columns: 15rem 1fr;
+  font-size: 16px;
+  min-height: 100vh;
+  overflow: hidden;
 }
-
 .title {
   display: flex;
   justify-content: space-around !important;
@@ -26,17 +27,11 @@ body {
   align-items: center;
   margin-top: 2rem;
 }
-
-aside i {
-  font-size: 2rem;
-}
-
 a {
   color: white;
   text-decoration: none;
   transition: color 0.3s ease-in-out;
 }
-
 label {
   font-size: 1rem;
   line-height: 0.2px;
@@ -85,6 +80,9 @@ header {
   flex-direction: column;
   gap: 1rem;
   width: 100%;
+}
+aside i {
+  font-size: 2rem;
 }
 aside img {
   transform: rotate(10deg);
@@ -136,10 +134,12 @@ footer {
   align-items: center;
   justify-content: space-evenly;
   background-color: rgb(9, 0, 51);
-  border-top: 3px solid rgba(255, 255, 255, 0.37);
+  border-top: 1px solid rgba(255, 255, 255, 0.37);
   grid-area: footer;
   text-align: center;
-  min-height: 8rem;
+  min-height: 8rem;  /* Asegúrate de que el footer tenga suficiente altura */
+  flex-direction: column;
+  padding: 1rem; /* Puede agregar algo de padding */
 }
 footer > div {
   cursor: pointer;
@@ -160,11 +160,37 @@ footer a:hover {
 }
 main {
   grid-area: main;
+  max-height: calc(98vh - 13rem);
+  width: 100%;
+}
+
+#main {
+  grid-area: main;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   gap: 1rem;
   padding: 1rem;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  margin: 0;
 }
+.pages {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  gap: 2rem;
+  padding: 1rem 0;
+  width: 100%;
+  background-color: #360041;
+}
+
+.pages a:hover {
+  color: #b904de;
+}
+
 .card {
   position: relative;
   padding: 1rem;
@@ -200,6 +226,7 @@ main {
   background-image: url("../img/sc.jpg");
   background-position: center;
   opacity: 80%;
+  height: 240px;
 }
 .card-photo {
   position: absolute;
@@ -213,7 +240,7 @@ main {
 .card-image {
   position: relative;
   width: 100%;
-  height: 60%;
+  height: 70%;
 }
 .card-photo img {
   transition: transform 0.3s ease-in-out;
@@ -222,7 +249,7 @@ main {
   height: auto;
 }
 .card-photo img:hover {
-  transform: scale(1.2) rotate(13deg);
+  transform: scale(1.15) rotate(12deg);
   transition: transform 0.15s ease-in-out;
   filter: drop-shadow(3px 3px 2px rgb(0, 0, 0));
 }
@@ -309,7 +336,7 @@ button:hover {
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-height: 7rem;
+    height: 100%;
     background-color: #360041;
   }
   aside img {
@@ -324,6 +351,10 @@ button:hover {
   }
   footer {
     flex-direction: column;
+    align-items: center;
+  }
+  main {
+    height: calc(56vh);
   }
 }
 @media (min-width: 576px) and (max-width: 992px) {
@@ -362,6 +393,9 @@ button:hover {
     justify-content: center;
     align-items: center;
   }
+  main {
+    height: calc(59vh);
+  }
 }
 @media (min-width: 993px) {
   header {
@@ -370,4 +404,5 @@ button:hover {
   aside i {
     display: none !important;
   }
+
 }

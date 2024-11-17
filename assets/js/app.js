@@ -44,7 +44,7 @@ const titles = [
   ];
 
 // Selección del contenedor principal para las tarjetas
-const mainContainer = document.querySelector("main");
+const mainContainer = document.getElementById("main");
 
 
 function generateCards() {
