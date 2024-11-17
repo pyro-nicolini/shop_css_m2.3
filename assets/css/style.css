@@ -313,7 +313,7 @@ span {
 }
 
 
-@media (max-width: 599px) {
+@media (max-width: 576px) {
   body {
     grid-template-areas:
       "sidebar"
@@ -392,7 +392,7 @@ span {
   
 }
 
-@media (min-width: 600px) and (max-width: 899px) {
+@media (min-width: 576px) and (max-width: 992px) {
   .card-photo {
     min-width: 285px;
     max-width: 285px;
@@ -408,7 +408,7 @@ span {
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 993px) {
   .card-photo {
     min-width: 285px;
     max-width: 285px;
