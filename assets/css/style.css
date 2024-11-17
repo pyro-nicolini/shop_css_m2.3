@@ -19,10 +19,9 @@ body {
   grid-template-areas:
     "sidebar header"
     "sidebar main"
-    "sidebar main"
-    "footer footer";
-  grid-template-rows: 10rem 1fr 1rem;
-  grid-template-columns: 10rem 1fr;
+    "footer main";
+  grid-template-rows: 10rem 1fr 13rem;
+  grid-template-columns: 15rem 1fr;
 }
 
 .title {
@@ -56,10 +55,6 @@ label {
   color: #eeeeee;
 }
 
-
-i {
-  display: none !important;
-}
 
 footer a:hover {
   transition: border-bottom 0.1s ease-in-out;
@@ -187,10 +182,6 @@ footer > div {
   padding-bottom: 1rem;
 }
 
-.fooend {
-  justify-content: space-between !important; 
-  gap: 1rem;
-}
 
 
 .card {
@@ -377,9 +368,7 @@ span {
     flex-direction: column;
   }
 
-  .fooend {
-    display: none;
-  }
+
 
   .card-photo {
     min-width: 285px;
@@ -397,15 +386,55 @@ span {
     min-width: 285px;
     max-width: 285px;
   }
-  .fooend {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
 
   header {
     transition: background-position 0.3s ease-in-out;
   }
+  body {
+    grid-template-areas:
+      "sidebar sidebar"
+      "header main"
+      "footer footer";
+    grid-template-rows: 10rem 1fr auto;
+    grid-template-columns: 20% 80%;
+  }
+  header {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-content: start;
+    height: auto;
+    background-image: url("../img/hd.png");
+    background-position: left;
+    background-size: contain;
+    background-attachment: fixed;
+  }
+aside {
+  width: 100%;
+}
+
+  title {
+    display: flex;
+    flex-direction: row;
+  }
+  aside img {
+    height: 3rem;
+  }
+  aside i {
+    display: none !important;
+  }
+
+  .menu {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+  }
+ 
+  
+
+
+
 }
 
 @media (min-width: 993px) {
@@ -413,14 +442,13 @@ span {
     min-width: 285px;
     max-width: 285px;
   }
-  .fooend {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 3rem;
-  }
+
   header {
     transition: background-position 0.3s ease-in-out;
   }
+  aside i {
+    display: none !important;
+  }
+  
 
 }
