@@ -6,7 +6,6 @@ const titles = [
     "AWP | HyperBeast", "Glock-18 | Moonlight", "Skin Inferno Beast", "AK-47 | Redline",
     "Caja de Armas Legendarias", "Skin Infernal Phoenix", "Skin Desert Mirage"
   ];
-
   const precios = [
     "US: $12 / CLP: $10.800",
     "US: $10 / CLP: $9.000",
@@ -24,7 +23,6 @@ const titles = [
     "US: $35 / CLP: $31.500",
     "US: $8 / CLP: $7.200",
   ];
-  
   const descriptions = [
     "Skin épico que transforma a tu personaje en un poderoso caballero dragón con efectos visuales espectaculares.",
     "El traje perfecto para los jugadores sigilosos, con un diseño futurista y detalles únicos.",
@@ -42,11 +40,8 @@ const titles = [
     "Este skin de AK-47 combina colores brillantes con una imagen de un fénix infernal, ideal para los jugadores audaces.",
     "Lleva el futuro a tu arsenal con este skin Cyber Ninja, que destaca con colores brillantes y detalles electrónicos.",
   ];
-
-// Selección del contenedor principal para las tarjetas
-const mainContainer = document.getElementById("main");
-
-
+  
+const mainContainer = document.getElementById("items");
 function generateCards() {
   imagePaths.forEach((image, index) => {
 

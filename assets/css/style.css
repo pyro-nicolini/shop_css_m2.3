@@ -17,8 +17,7 @@ body {
   grid-template-rows: 10rem 1fr auto;
   grid-template-columns: 15rem 1fr;
   font-size: 16px;
-  min-height: 100vh;
-  overflow: hidden;
+  height: 100vh;
 }
 .title {
   display: flex;
@@ -137,9 +136,9 @@ footer {
   border-top: 1px solid rgba(255, 255, 255, 0.37);
   grid-area: footer;
   text-align: center;
-  min-height: 8rem;  /* Asegúrate de que el footer tenga suficiente altura */
+  min-height: 8rem;
   flex-direction: column;
-  padding: 1rem; /* Puede agregar algo de padding */
+  padding: 1rem;
 }
 footer > div {
   cursor: pointer;
@@ -160,37 +159,38 @@ footer a:hover {
 }
 main {
   grid-area: main;
-  max-height: calc(98vh - 13rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+  align-items: center;
   width: 100%;
+  height: 100%;
 }
-
-#main {
-  grid-area: main;
+#items {
+  grid-area: alfa;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   gap: 1rem;
   padding: 1rem;
   width: 100%;
-  height: 100%;
-  overflow-y: auto;
   margin: 0;
+  overflow-y: scroll;
 }
 .pages {
+  grid-area: beta;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
-  line-height: 1.5;
   gap: 2rem;
   padding: 1rem 0;
   width: 100%;
   background-color: #360041;
+  height: auto;
 }
-
 .pages a:hover {
   color: #b904de;
 }
-
 .card {
   position: relative;
   padding: 1rem;
@@ -300,7 +300,6 @@ button:hover {
   filter: drop-shadow(5px 5px 3px rgb(0, 0, 0));
   transition: filter 0.1s ease-in-out;
 }
-
 @media (max-width: 576px) {
   body {
     grid-template-areas:
@@ -310,6 +309,12 @@ button:hover {
       "footer";
     grid-template-rows: auto 8rem 1fr auto;
     grid-template-columns: 1fr;
+    height: 100vh;
+  }
+  main {
+    grid-area: main;
+    overflow-y: auto;
+    height: 100%;
   }
   i {
     cursor: pointer;
@@ -353,9 +358,6 @@ button:hover {
     flex-direction: column;
     align-items: center;
   }
-  main {
-    height: calc(56vh);
-  }
 }
 @media (min-width: 576px) and (max-width: 992px) {
   body {
@@ -365,6 +367,12 @@ button:hover {
       "footer footer";
     grid-template-rows: 10rem 1fr auto;
     grid-template-columns: 20% 80%;
+    height: 100vh;
+  }
+  main {
+    grid-area: main;
+    overflow-y: auto;
+    height: 100%;
   }
   header {
     padding-top: 2rem;
@@ -393,9 +401,6 @@ button:hover {
     justify-content: center;
     align-items: center;
   }
-  main {
-    height: calc(59vh);
-  }
 }
 @media (min-width: 993px) {
   header {
@@ -404,5 +409,8 @@ button:hover {
   aside i {
     display: none !important;
   }
-
+}
+#items {
+  scrollbar-width: 0.5rem;
+  scrollbar-color: #b904de #190049;
 }
