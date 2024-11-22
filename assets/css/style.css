@@ -167,7 +167,6 @@ main {
   height: 100%;
 }
 #items {
-  grid-area: alfa;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   gap: 1rem;
@@ -177,7 +176,6 @@ main {
   overflow-y: scroll;
 }
 .pages {
-  grid-area: beta;
   display: flex;
   justify-content: center;
   align-items: center;
