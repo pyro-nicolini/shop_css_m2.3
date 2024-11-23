@@ -2,29 +2,112 @@
 *, *::before, *::after {
   box-sizing: border-box;
 }
+/* Estilos para móvil */
 body {
-  background: #1d2021;
-  width: 100%;
-  color: white;
   font-family: "League Spartan", sans-serif;
-  margin: 0;
-  padding: 0;
+  background: #1d2021;
+  color: #eeeeee;
   display: grid;
   grid-template-areas:
-    "sidebar header"
-    "sidebar main"
-    "footer main";
-  grid-template-rows: 10rem 1fr auto;
-  grid-template-columns: 15rem 1fr;
+  "sidebar"
+  "header"
+  "main"
+  "footer";
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-columns: 1fr;
   font-size: 16px;
   height: 100vh;
+  margin: 0;
+  width: 100%;
 }
+header {
+  font-family: "Bebas Neue";
+  grid-area: header;
+  background-image: url("../img/banner.jpeg");
+  background-position: center;
+  background-color: black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  display: flex;
+  text-align: center;
+  align-items: center;
+  z-index: 1000;
+  height: 7rem;
+  justify-content: center;
+  border: 1px solid rgba(234, 234, 234, 0.3);
+  font-size: 3rem;
+  transition: background-position 0.3s ease-in-out;
+}
+aside {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-direction: column;
+  grid-area: sidebar;
+  text-align: center;
+  margin: 0 auto;
+  border-right: 1px solid rgba(92, 92, 92, 0.5);
+  border: 1px solid rgba(234, 234, 234, 0.3);
+  width: 100%;
+  height: 100%;
+  background-color: #360041;
+}
+aside img {
+  height: 3rem;
+  transform: rotate(10deg);
+  filter: drop-shadow(8px 5px 0px rgb(255, 255, 255));
+}
+
+aside {
+  justify-content: center;
+}
+aside i {
+  font-size: 2rem;
+}
+
+aside a:hover {
+  transition: border-right 0.1s ease-in-out;
+  border-right: 5px solid rgba(187, 2, 162, 0.9);
+  background-color: rgb(31, 0, 80);
+  font-weight: 700;
+}
+aside a:active {
+  border-right: 10px solid rgba(187, 2, 162, 0.9);
+}
+aside a {
+  border-right: 0px solid rgba(187, 2, 162, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+  transition: background-color, border-left 0.3s ease-in-out;
+  color: white;
+  text-decoration: none;
+}
+
+main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
 .title {
   display: flex;
   justify-content: space-around !important;
-  flex-direction: column;
   align-items: center;
   margin-top: 2rem;
+  gap: 1rem;
+}
+#items {
+  scrollbar-width: 0.5rem;
+  scrollbar-color: #b904de #08002e;
 }
 a {
   color: white;
@@ -56,23 +139,7 @@ h2 {
   transition: font-size 0.4s ease-in-out;
   margin: 0;
 }
-header {
-  font-family: "Bebas Neue";
-  border-bottom: 1px solid rgb(0, 0, 0);
-  grid-area: header;
-  background-image: url("../img/banner.jpeg");
-  background-position: center;
-  background-color: black;
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: white;
-  text-align: center;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(234, 234, 234, 0.3);
-}
+
 .header-container {
   display: flex;
   align-items: center;
@@ -80,69 +147,13 @@ header {
   gap: 1rem;
   width: 100%;
 }
-aside i {
-  font-size: 2rem;
-}
-aside img {
-  transform: rotate(10deg);
-  height: 5rem;
-  filter: drop-shadow(8px 5px 0px rgb(255, 255, 255));
-}
-aside {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-  flex-direction: column;
-  grid-area: sidebar;
-  text-align: center;
-  margin: 0 auto;
-  border-right: 1px solid rgba(92, 92, 92, 0.5);
-  background-color: rgb(10, 0, 27);
-  border: 1px solid rgba(234, 234, 234, 0.3);
-}
+
+
 .menu {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  height: fit-content;
-  gap: 1rem;
+  display: none;
 }
-aside a:hover {
-  transition: border-right 0.1s ease-in-out;
-  border-right: 5px solid rgba(187, 2, 162, 0.9);
-  background-color: rgb(31, 0, 80);
-  font-weight: 700;
-}
-aside a:active {
-  border-right: 10px solid rgba(187, 2, 162, 0.9);
-}
-aside a {
-  border-right: 0px solid rgba(187, 2, 162, 0.9);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 4rem;
-  transition: background-color, border-left 0.3s ease-in-out;
-  color: white;
-  text-decoration: none;
-}
-footer {
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  background-color: rgb(9, 0, 51);
-  border-top: 1px solid rgba(255, 255, 255, 0.37);
-  grid-area: footer;
-  text-align: center;
-  min-height: 8rem;
-  flex-direction: column;
-  padding: 1rem;
-}
-footer > div {
-  cursor: pointer;
-}
+
+
 footer a:hover {
   transition: border-bottom 0.1s ease-in-out;
   border-bottom: 5px solid rgba(187, 2, 162, 0.9);
@@ -157,15 +168,7 @@ footer a:hover {
   font-size: 2rem;
   margin: 0.5rem 0;
 }
-main {
-  grid-area: main;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; 
-  align-items: center;
-  width: 100%;
-  height: 100%;
-}
+
 #items {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
@@ -175,6 +178,7 @@ main {
   margin: 0;
   overflow-y: scroll;
 }
+
 .pages {
   display: flex;
   justify-content: center;
@@ -233,15 +237,6 @@ main {
 @keyframes brillomarco {
   0% {
     border: 2px solid rgb(255, 255, 23);
-  }
-  50% {
-    border: 2px solid rgb(255, 196, 0);
-  }
-  100% {
-    border: 2px solid rgb(141, 106, 0);
-  }
-  0% {
-    border: 2px solid rgb(156, 156, 10);
   }
   50% {
     border: 2px solid rgb(255, 196, 0);
@@ -323,72 +318,60 @@ button:hover {
   filter: drop-shadow(5px 5px 3px rgb(0, 0, 0));
   transition: filter 0.1s ease-in-out;
 }
-@media (max-width: 576px) {
+footer {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: rgb(9, 0, 51);
+  border-top: 1px solid rgba(255, 255, 255, 0.37);
+  grid-area: footer;
+  text-align: center;
+  min-height: 8rem;
+  flex-direction: column;
+}
+footer > div {
+  cursor: pointer;
+}
+
+/* Estilos para pantallas de más de 576px (y mayores) */
+@media (min-width: 993px) {
   body {
+    display: grid;
     grid-template-areas:
-      "sidebar"
-      "header"
-      "main"
-      "footer";
-    grid-template-rows: auto 8rem 1fr auto;
-    grid-template-columns: 1fr;
-    height: 100vh;
-  }
-  main {
-    grid-area: main;
-    overflow-y: auto;
-    height: 100%;
-  }
-  i {
-    cursor: pointer;
-  }
-  h1:hover,
-  .logo:hover {
-    scale: 1.2;
-    transition: scale 0.3s ease-in-out;
+      "sidebar header"
+      "sidebar main"
+      "footer main";
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 13rem 1fr;
   }
   header {
-    font-size: 3rem;
-    justify-content: center;
-    align-items: center;
     transition: background-position 0.3s ease-in-out;
   }
-  .title {
-    justify-content: space-around !important;
-    flex-direction: row;
-    align-items: center;
-    margin-top: 0;
-    gap: 2rem;
-  }
-  aside {
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    background-color: #360041;
-  }
+
   aside img {
-    height: 3rem;
+    height: 5rem;
+  }
+  aside i {
+    display: none !important;
   }
   .menu {
-    display: none;
-  }
-  h1 {
-    transition: font-size 0.4s ease-in-out;
-    font-size: 1.8em;
-  }
-  footer {
+    display: flex !important;
+    width: 100%;
     flex-direction: column;
-    align-items: center;
+    justify-content: space-evenly;
+    height: fit-content;
+    gap: 1rem;
   }
 }
-@media (min-width: 576px) and (max-width: 992px) {
+
+@media (min-width: 576px) and (max-width: 993px) {
   body {
     grid-template-areas:
       "sidebar sidebar"
       "header main"
       "footer footer";
-    grid-template-rows: 10rem 1fr auto;
+    grid-template-rows: auto 1fr auto;
     grid-template-columns: 20% 80%;
     height: 100vh;
   }
@@ -398,7 +381,7 @@ button:hover {
     height: 100%;
   }
   header {
-    padding-top: 2rem;
+    padding-top: 1rem;
     flex-direction: column;
     justify-content: start;
     align-content: start;
@@ -407,33 +390,13 @@ button:hover {
     background-position: left center;
     background-size: contain;
     background-attachment: fixed;
-    border: 1px solid rgba(209, 209, 209, 0.2);
     transition: background-position 0.3s ease-in-out;
   }
   aside {
     width: 100%;
+    height: 9rem;
   }
   aside img {
     height: 3rem;
   }
-  aside i {
-    display: none !important;
-  }
-  .menu {
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-  }
-}
-@media (min-width: 993px) {
-  header {
-    transition: background-position 0.3s ease-in-out;
-  }
-  aside i {
-    display: none !important;
-  }
-}
-#items {
-  scrollbar-width: 0.5rem;
-  scrollbar-color: #b904de #08002e;
 }
